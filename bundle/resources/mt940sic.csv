@@ -1,0 +1,57 @@
+BNK,Securities Related Item - Bank Fees
+BOE,Bill of Exchange
+BRF,Brokerage Fee
+CAR,Securities Related Item - Corporate Actions Related (should only be used when no specific corporate action event code is available)
+CAS,Securities Related Item - Cash in Lieu
+CHG,Charges and Other Expenses
+CHK,Cheques
+CLR,Cash Letters/Cheques Remittance
+CMI,Cash Management Item - No Detail
+CMN,Cash Management Item - Notional Pooling
+CMP,Compensation Claims
+CMS,Cash Management Item - Sweeping
+CMT,Cash Management Item - Topping
+CMZ,Cash Management Item - Zero Balancing
+COL,Collections (used when entering a principal amount)
+COM,Commission
+CPN,Securities Related Item - Coupon Payments
+DCR,Documentary Credit (used when entering a principal amount)
+DDT,Direct Debit Item
+DIS,Securities Related Item - Gains Disbursement
+DIV,Securities Related Item - Dividends
+EQA,Equivalent Amount
+EXT,Securities Related Item - External Transfer for Own Account
+FEX,Foreign Exchange
+INT,Interest Related Amount
+LBX,Lock Box
+LDP,Loan Deposit
+MAR,Securities Related Item - Margin Payments/Receipts
+MAT,Securities Related Item - Maturity
+MGT,Securities Related Item - Management Fees
+MSC,Miscellaneous
+NWI,Securities Related Item - New Issues Distribution
+ODC,Overdraft Charge
+OPT,Securities Related Item - Options
+PCH,Securities Related Item - Purchase (including STIF and Time deposits)
+POP,Securities Related Item - Pair-off Proceeds
+PRN,Securities Related Item - Principal Pay-down/Pay-up
+REC,Securities Related Item - Tax Reclaim
+RED,Securities Related Item - Redemption/Withdrawal
+RIG,Securities Related Item - Rights
+RTI,Returned Item
+SAL,Securities Related Item - Sale (including STIF and Time deposits)
+SEC,Securities (used when entering a principal amount)
+SLE,Securities Related Item - Securities Lending Related
+STO,Standing Order
+STP,Securities Related Item - Stamp Duty
+SUB,Securities Related Item - Subscription
+SWP,Securities Related Item - SWAP Payment
+TAX,Securities Related Item - Withholding Tax Payment
+TCK,Travellers Cheques
+TCM,Securities Related Item - Tripartite Collateral Management
+TRA,Securities Related Item - Internal Transfer for Own Account
+TRF,Transfer
+TRN,Securities Related Item - Transaction Fee
+UWC,Securities Related Item - Underwriting Commission
+VDA,Value Date Adjustment (used with an entry made to withdraw an incorrectly dated entry - it will be followed by the correct entry with the relevant code)
+WAR,Securities Related Item - Warrant
