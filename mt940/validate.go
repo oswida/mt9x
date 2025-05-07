@@ -6,7 +6,6 @@ import (
 	"slices"
 	"strconv"
 	"strings"
-	"time"
 	"unicode/utf8"
 )
 
@@ -64,9 +63,6 @@ func isCorrectReference(ref string) bool {
 
 // Validate validates balance field according "Network Validated Rules"
 func (b *Balance) Validate(cp *bundle.CurrencyProvider) error {
-	if _, err := time.Parse("060102", b.Date); err != nil {
-		return fmt.Errorf("bad date: %w", err)
-	}
 	if !slices.Contains(cp.List(), b.Currency) {
 		return fmt.Errorf("bad currency code: %s", b.Currency)
 	}
@@ -105,14 +101,6 @@ func (ss *StatementSection) Validate(sicp *bundle.StatementIdentCodeProvider) er
 
 // Validate validates single statement line according "Network Validated Rules".
 func (s *Statement) Validate(sicp *bundle.StatementIdentCodeProvider) error {
-	if _, err := time.Parse("060102", s.ValueDate); err != nil {
-		return fmt.Errorf("bad value date: %w", err)
-	}
-	if s.EntryDate != nil {
-		if _, err := time.Parse("0102", *s.EntryDate); err != nil {
-			return fmt.Errorf("bad entry date: %w", err)
-		}
-	}
 	if !isCorrectTransactionIdent(s.TransactionIdent, sicp) {
 		return fmt.Errorf("bad transaction ident: %s", s.TransactionIdent)
 	}

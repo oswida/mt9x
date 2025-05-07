@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"mt9x/mt940"
 )
@@ -11,5 +12,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", result)
+	v, err := json.MarshalIndent(result, "", " ")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("%s\n", string(v))
 }
