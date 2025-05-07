@@ -1,14 +1,16 @@
-package mt940
+package grammar
 
 import (
-	"mt9x/common"
+	"fmt"
+	"mt9x/bundle"
+	"strings"
 )
 
 // Grammar for MT940 file, according standard available here:
 // https://www2.swift.com/knowledgecentre/publications/us9m_20230720/2.0?topic=mt940.htm
 
 // Message represents MT940 standard message structure.
-type Message struct {
+type MT940Message struct {
 	// Specifies the reference assigned by the Sender to unambiguously identify the message.
 	TransactionRefNo string `parser:"T20 @StringX (CRLF|EOF)" json:"tag20"`
 	// Contains the field 20 Transaction Reference Number of the request message (response to MT920 Request Message).
@@ -36,39 +38,54 @@ type Message struct {
 	AccountOwnerInfo []string `parser:"(T86 @StringX (CRLF @StringX)* (CRLF|EOF))?" json:"tag86,omitempty"`
 }
 
-type StatementSection struct {
-	// Contains the details of each transaction.
-	Statement Statement `parser:"T61 @@ (CRLF|EOF)" json:"tag61"`
-	// Contains additional information about the transaction detailed in the preceding statement line
-	// and which is to be passed on to the account owner.
-	AccountOwnerInfo []string `parser:"(T86 @StringX (CRLF @StringX)* (CRLF|EOF))?" json:"tag86,omitempty"`
+// Validate validates MT940 messages according "Network Validated Rules"
+func (m MT940Message) Validate() error {
+	cp, err := bundle.NewCurrencyProvider()
+	if err != nil {
+		return fmt.Errorf("cannot create currency provider: %v", err)
+	}
+	sicp, err := bundle.NewStatementIdentificationCodeProvider()
+	if err != nil {
+		return fmt.Errorf("cannot create statement identification provider: %v", err)
+	}
+
+	if !isCorrectReference(m.TransactionRefNo) {
+		return fmt.Errorf("bad transaction reference number: %s", m.TransactionRefNo)
+	}
+
+	if m.RelatedReference != nil {
+		if !isCorrectReference(*m.RelatedReference) {
+			return fmt.Errorf("bad related reference number: %s", *m.RelatedReference)
+		}
+	}
+
+	for _, line := range m.Statements {
+		err := line.Validate(sicp)
+		if err != nil {
+			return fmt.Errorf("error parsing MT940 statement: %w", err)
+		}
+	}
+
+	if err := m.OpeningBalance.Validate(cp); err != nil {
+		return fmt.Errorf("bad opening balance: %w", err)
+	}
+
+	if err := m.ClosingBalance.Validate(cp); err != nil {
+		return fmt.Errorf("bad closing balance: %w", err)
+	}
+
+	if m.ClosingAvailableBalance != nil {
+		if err := m.ClosingAvailableBalance.Validate(cp); err != nil {
+			return fmt.Errorf("bad closing available balance: %w", err)
+		}
+	}
+
+	return nil
 }
 
-type AccountIdent struct {
-	Account   string  `parser:"@StringX" json:"account"`
-	IdentCode *string `parser:"(CRLF @StringX)?" json:"ident_code,omitempty"`
-}
-
-type StatementNumber struct {
-	StatementNo string  `parser:"@Number" json:"stmt_number"`
-	SequenceNo  *string `parser:"(Slash @Number)?" json:"seq_number,omitempty"`
-}
-
-type Balance struct {
-	DCMark   string              `parser:"@DCMark" json:"dc_mark"`
-	Date     common.SixDigitDate `parser:"@Date" json:"date"`
-	Currency string              `parser:"@Currency" json:"currency"`
-	Amount   common.CommaDecimal `parser:"@Amount" json:"amount"`
-}
-
-type Statement struct {
-	ValueDate            common.SixDigitDate  `parser:"@Date" json:"value_date"`
-	EntryDate            *common.SixDigitDate `parser:"@EntryDate?" json:"entry_date,omitempty"`
-	DCMark               string               `parser:"@RDCMark" json:"dc_mark"`
-	FundsCode            *string              `parser:"@BigLetter?" json:"funds_code,omitempty"`
-	Amount               common.CommaDecimal  `parser:"@Amount" json:"amount"`
-	TransactionIdent     string               `parser:"@TransIdent" json:"trx_ident"`
-	Reference            string               `parser:"@StringXNoSlash" json:"owner_ref"`
-	InstitutionReference *string              `parser:"(TwoSlashes @StringXNoSlash?)?" json:"institution_ref,omitempty"`
-	Details              *string              `parser:"(CRLF @StringX)?" json:"details,omitempty"`
+// isCorrectReference checks if reference number is proper according the standard.
+func isCorrectReference(ref string) bool {
+	return !strings.HasPrefix(ref, "/") &&
+		!strings.HasSuffix(ref, "/") &&
+		!strings.Contains(ref, "//")
 }

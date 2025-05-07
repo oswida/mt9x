@@ -1,4 +1,4 @@
-package common
+package parser
 
 const (
 	StringX        = `[^:][a-zA-Z0-9/\-\?:().,'+  ]+`

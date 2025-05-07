@@ -3,12 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"mt9x/mt940"
+	"mt9x/grammar"
+	"mt9x/parser"
 )
 
 func main() {
-	p := mt940.NewFileParser()
-	result, err := p.Parse("testdata/msg/spec-example.msg")
+	p := parser.NewFileParser[grammar.MT940Message]()
+	result, err := p.Parse("testdata/mt940/spec-example.msg")
 	if err != nil {
 		panic(err)
 	}

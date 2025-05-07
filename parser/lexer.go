@@ -1,17 +1,15 @@
-package mt940
+package parser
 
 import (
-	"mt9x/common"
-
 	"github.com/alecthomas/participle/v2/lexer"
 )
 
-// NewLexer creates stateful lexical analyzer for MT940 messages.
+// NewLexer creates stateful lexical analyzer for MT9x messages.
 func NewLexer() *lexer.StatefulDefinition {
 	return lexer.MustStateful(lexer.Rules{
 		"Root": []lexer.Rule{
 			{Name: "Slash", Pattern: "/", Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: nil},
+			{Name: "CRLF", Pattern: CRLF, Action: nil},
 			{Name: "T20", Pattern: ":20:", Action: lexer.Push("Tag20")},
 			{Name: "T21", Pattern: ":21:", Action: lexer.Push("Tag21")},
 			{Name: "T25", Pattern: ":25:", Action: lexer.Push("Tag25")},
@@ -27,39 +25,39 @@ func NewLexer() *lexer.StatefulDefinition {
 			{Name: "T65", Pattern: ":65:", Action: lexer.Push("Tag60")},
 		},
 		"Tag20": []lexer.Rule{
-			{Name: "StringX", Pattern: common.StringX, Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "StringX", Pattern: StringX, Action: nil},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 		},
 		"Tag21": []lexer.Rule{
-			{Name: "StringX", Pattern: common.StringX, Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "StringX", Pattern: StringX, Action: nil},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 		},
 		"Tag25": []lexer.Rule{
-			{Name: "StringX", Pattern: common.StringX, Action: nil},
+			{Name: "StringX", Pattern: StringX, Action: nil},
 			// Possible identifier
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Push("Tag25_1")},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Push("Tag25_1")},
 			lexer.Return(),
 		},
 		"Tag25_1": []lexer.Rule{
-			{Name: "StringX", Pattern: common.StringX, Action: nil}, // cannot be a tag
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "StringX", Pattern: StringX, Action: nil}, // cannot be a tag
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 			lexer.Return(),
 		},
 		"Tag28": []lexer.Rule{
 			{Name: "Number", Pattern: "[0-9]+", Action: nil},
 			{Name: "Slash", Pattern: "/", Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 		},
 		"Tag60": []lexer.Rule{
 			{Name: "DCMark", Pattern: "[DC]", Action: nil},
 			{Name: "Currency", Pattern: "[A-Z][A-Z][A-Z]", Action: lexer.Push("Tag60Amount")},
 			{Name: "Date", Pattern: "[0-9][0-9][0-9][0-9][0-9][0-9]", Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 		},
 		"Tag60Amount": []lexer.Rule{
 			// Less strict as in standard as it accepts also amounts w/o comma
-			{Name: "Amount", Pattern: common.Amount, Action: lexer.Pop()},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Pop()},
+			{Name: "Amount", Pattern: Amount, Action: lexer.Pop()},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 		},
 		"Tag61": []lexer.Rule{
 			// recognize first, mandatory date
@@ -67,7 +65,7 @@ func NewLexer() *lexer.StatefulDefinition {
 			// (Reversed) Debit/Credit mark
 			{Name: "RDCMark", Pattern: "[R]?[DC]", Action: lexer.Push("Tag61_2")},
 			// Maybe end but also supplementary details
-			{Name: "CRLF", Pattern: common.CRLF, Action: nil},
+			{Name: "CRLF", Pattern: CRLF, Action: nil},
 			lexer.Return(),
 		},
 		"Tag61_1": []lexer.Rule{
@@ -80,7 +78,7 @@ func NewLexer() *lexer.StatefulDefinition {
 			{Name: "BigLetter", Pattern: "[A-Z]", Action: nil},
 			// Transaction amount
 			// Less strict as in standard as it accepts also amounts w/o comma
-			{Name: "Amount", Pattern: common.Amount, Action: lexer.Push("Tag61_3")},
+			{Name: "Amount", Pattern: Amount, Action: lexer.Push("Tag61_3")},
 			lexer.Return(),
 		},
 		"Tag61_3": []lexer.Rule{
@@ -90,20 +88,20 @@ func NewLexer() *lexer.StatefulDefinition {
 		},
 		"Tag61_4": []lexer.Rule{
 			// References
-			{Name: "StringXNoSlash", Pattern: common.StringXNoSlash, Action: nil},
+			{Name: "StringXNoSlash", Pattern: StringXNoSlash, Action: nil},
 			{Name: "TwoSlashes", Pattern: "//", Action: nil},
-			{Name: "CRLF", Pattern: common.CRLF, Action: lexer.Push("Tag61_5")},
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Push("Tag61_5")},
 			lexer.Return(),
 		},
 		"Tag61_5": []lexer.Rule{
 			// Supplementary details
-			{Name: "StringX", Pattern: common.StringX, Action: nil}, // cannot be tag
+			{Name: "StringX", Pattern: StringX, Action: nil}, // cannot be tag
 			lexer.Return(),
 		},
 		"Tag86": []lexer.Rule{
 			// this tag can have 6 lines maximum
-			{Name: "StringX", Pattern: common.StringX, Action: nil}, // cannot be tag
-			{Name: "CRLF", Pattern: common.CRLF, Action: nil},
+			{Name: "StringX", Pattern: StringX, Action: nil}, // cannot be tag
+			{Name: "CRLF", Pattern: CRLF, Action: nil},
 			lexer.Return(),
 		},
 	})

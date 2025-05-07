@@ -1,4 +1,4 @@
-package common
+package parser
 
 import (
 	"fmt"
@@ -7,6 +7,11 @@ import (
 
 	"github.com/shopspring/decimal"
 )
+
+// MT9xMessage
+type MT9xMessage interface {
+	Validate() error
+}
 
 // CommaDecimal captures decimal with comma (instead of dot) as a decimal sign
 type CommaDecimal struct {

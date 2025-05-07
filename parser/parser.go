@@ -1,4 +1,4 @@
-package mt940
+package parser
 
 import (
 	"fmt"
@@ -7,35 +7,35 @@ import (
 	"github.com/alecthomas/participle/v2"
 )
 
-type FileParser struct {
-	parser *participle.Parser[Message]
+type FileParser[T MT9xMessage] struct {
+	parser *participle.Parser[T]
 }
 
 // NewFileParser creates new file parser for MT940 messages.
-func NewFileParser() *FileParser {
+func NewFileParser[T MT9xMessage]() *FileParser[T] {
 	lexer := NewLexer()
-	parser := participle.MustBuild[Message](
+	parser := participle.MustBuild[T](
 		participle.Lexer(lexer),
 		participle.UseLookahead(1))
-	return &FileParser{
+	return &FileParser[T]{
 		parser: parser,
 	}
 }
 
 // Parse parses MT940 message into structure.
-func (fp *FileParser) Parse(filename string) (*Message, error) {
+func (fp *FileParser[T]) Parse(filename string) (*T, error) {
 	f, err := os.Open(filename)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file %s: %w", filename, err)
 	}
-	result, err := fp.parser.Parse(filename, f)
+	res, err := fp.parser.Parse(filename, f)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse file %s: %w", filename, err)
 	}
-	err = result.Validate()
+	err = (*res).Validate()
 	if err != nil {
 		return nil, fmt.Errorf("failed to validate parsed result %s: %w", filename, err)
 	}
 
-	return result, nil
+	return res, nil
 }
