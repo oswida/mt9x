@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"unicode/utf8"
+	// "github.com/alecthomas/participle/v2/lexer"
 )
 
 type StatementSection struct {
@@ -46,6 +47,8 @@ type Statement struct {
 	InstitutionReference *string              `parser:"(TwoSlashes @StringXNoSlash?)?" json:"institution_ref,omitempty"`
 	Details              *string              `parser:"(CRLF @StringX)?" json:"details,omitempty"`
 }
+
+// --- VALIDATIONS ---
 
 // Validate validates balance field according "Network Validated Rules"
 func (b *Balance) Validate(cp *bundle.CurrencyProvider) error {
