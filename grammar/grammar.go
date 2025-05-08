@@ -21,7 +21,7 @@ type StatementSection struct {
 
 type AccountIdent struct {
 	Account   string  `parser:"@StringX" json:"account"`
-	IdentCode *string `parser:"(CRLF @StringX)?" json:"ident_code,omitempty"`
+	IdentCode *string `parser:"(CRLF @StringX)?" json:"ident_code,omitempty"` //TODO: validate ident code 4!a2!a2!c[3!c]
 }
 
 type StatementNumber struct {
@@ -43,8 +43,8 @@ type Statement struct {
 	FundsCode            *string              `parser:"@BigLetter?" json:"funds_code,omitempty"`
 	Amount               parser.CommaDecimal  `parser:"@Amount" json:"amount"`
 	TransactionIdent     string               `parser:"@TransIdent" json:"trx_ident"`
-	Reference            string               `parser:"@StringXNoSlash" json:"owner_ref"`
-	InstitutionReference *string              `parser:"(TwoSlashes @StringXNoSlash?)?" json:"institution_ref,omitempty"`
+	Reference            string               `parser:"@StringXNo2Slash" json:"owner_ref"`
+	InstitutionReference *string              `parser:"(TwoSlashes @StringXNo2Slash?)?" json:"institution_ref,omitempty"`
 	Details              *string              `parser:"(CRLF @StringX)?" json:"details,omitempty"`
 }
 

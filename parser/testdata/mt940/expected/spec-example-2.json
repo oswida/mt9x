@@ -1,0 +1,83 @@
+{
+ "tag20": "123456",
+ "tag25": {
+  "account": "123-304958",
+  "ident_code": "CORPGB22"
+ },
+ "tag28": {
+  "stmt_number": "123",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2009-01-23T00:00:00Z",
+  "currency": "USD",
+  "amount": "395212311.71"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2009-01-23T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "50000000",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "8951234",
+    "details": "ORDER BK OF NYC WESTERN CASH RESERVE"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2009-01-26T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "5700000",
+    "trx_ident": "NFEX",
+    "owner_ref": "036960",
+    "institution_ref": "8954321"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2009-01-27T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "200000",
+    "trx_ident": "NDIV",
+    "owner_ref": "NONREF",
+    "institution_ref": "8846543"
+   },
+   "tag86": [
+    "DIVIDEND LORAL CORP",
+    "PREFERRED STOCK 1ST QUARTER 2009"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2009-01-23T00:00:00Z",
+  "currency": "USD",
+  "amount": "451112311.71"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2009-01-23T00:00:00Z",
+  "currency": "USD",
+  "amount": "445212311.71"
+ },
+ "tag65": [
+  {
+   "dc_mark": "C",
+   "date": "2009-01-26T00:00:00Z",
+   "currency": "USD",
+   "amount": "450912311.71"
+  },
+  {
+   "dc_mark": "C",
+   "date": "2009-01-27T00:00:00Z",
+   "currency": "USD",
+   "amount": "451112311.71"
+  }
+ ],
+ "tag86": [
+  "PRIME RATE AS OF TODAY 11 PCT"
+ ]
+}

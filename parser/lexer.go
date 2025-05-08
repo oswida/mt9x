@@ -88,8 +88,8 @@ func NewLexer() *lexer.StatefulDefinition {
 		},
 		"Tag61_4": []lexer.Rule{
 			// References
-			{Name: "StringXNoSlash", Pattern: StringXNoSlash, Action: nil},
 			{Name: "TwoSlashes", Pattern: "//", Action: nil},
+			{Name: "StringXNo2Slash", Pattern: StringXNo2Slash, Action: nil},
 			{Name: "CRLF", Pattern: CRLF, Action: lexer.Push("Tag61_5")},
 			lexer.Return(),
 		},

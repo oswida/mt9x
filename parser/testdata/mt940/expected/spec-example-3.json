@@ -1,0 +1,54 @@
+{
+ "tag20": "127421",
+ "tag25": {
+  "account": "123-304958",
+  "ident_code": "CORPGB22"
+ },
+ "tag28": {
+  "stmt_number": "124",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2009-01-24T00:00:00Z",
+  "currency": "USD",
+  "amount": "451112311.71"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2009-01-24T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "10000000",
+    "trx_ident": "S202",
+    "owner_ref": "DRS/06553"
+   }
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2009-01-24T00:00:00Z",
+  "currency": "USD",
+  "amount": "441112311.71"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2009-01-24T00:00:00Z",
+  "currency": "USD",
+  "amount": "435212311.71"
+ },
+ "tag65": [
+  {
+   "dc_mark": "C",
+   "date": "2009-01-26T00:00:00Z",
+   "currency": "USD",
+   "amount": "440912311.71"
+  },
+  {
+   "dc_mark": "C",
+   "date": "2009-01-27T00:00:00Z",
+   "currency": "USD",
+   "amount": "441112311.71"
+  }
+ ]
+}

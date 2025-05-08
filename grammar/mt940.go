@@ -7,20 +7,20 @@ import (
 )
 
 // Grammar for MT940 file, according standard available here:
-// https://www2.swift.com/knowledgecentre/publications/us9m_20230720/2.0?topic=mt940.htm
+// https://www2.swift.com/knowledgecentre/publications/us9m_20240719/2.0
 
 // Message represents MT940 standard message structure.
 type MT940Message struct {
 	// Specifies the reference assigned by the Sender to unambiguously identify the message.
-	TransactionRefNo string `parser:"T20 @StringX (CRLF|EOF)" json:"tag20"`
+	TransactionRefNo string `parser:"T20 @StringX CRLF" json:"tag20"`
 	// Contains the field 20 Transaction Reference Number of the request message (response to MT920 Request Message).
-	RelatedReference *string `parser:"(T21 @StringX (CRLF|EOF))?" json:"tag21,omitempty"`
+	RelatedReference *string `parser:"(T21 @StringX CRLF)?" json:"tag21,omitempty"`
 	// Identifies the account and optionally the identifier code of the account owner for which the statement is sent.
 	// Need some examples, optional
-	AccountIdentification AccountIdent `parser:"(T25|T25P) @@ (CRLF|EOF)" json:"tag25"`
+	AccountIdentification AccountIdent `parser:"(T25|T25P) @@ CRLF" json:"tag25"`
 	// Contains the sequential number of the statement, optionally followed by the sequence number of the message
 	// within that statement when more than one message is sent for one statement.
-	StatementNumber StatementNumber `parser:"T28C @@ (CRLF|EOF)" json:"tag28"`
+	StatementNumber StatementNumber `parser:"T28C @@ CRLF" json:"tag28"`
 	// Specifies, for the (intermediate - M) opening balance, whether it is a debit or credit balance,
 	// the date, the currency and the amount of the balance.
 	OpeningBalance Balance `parser:"(T60F|T60M) @@ (CRLF|EOF)" json:"tag60"`
@@ -33,7 +33,7 @@ type MT940Message struct {
 	ClosingAvailableBalance *Balance `parser:"(T64 @@ (CRLF|EOF))?" json:"tag64,omitempty"`
 	// Indicates the funds which are available to the account owner
 	// (if a credit or debit balance) for the specified forward value date.
-	ForwardAvailableBalance *Balance `parser:"(T65 @@ (CRLF|EOF))?" json:"tag65,omitempty"`
+	ForwardAvailableBalance []Balance `parser:"(T65 @@ (CRLF|EOF))*" json:"tag65,omitempty"`
 	// Summarizing owner info
 	AccountOwnerInfo []string `parser:"(T86 @StringX (CRLF @StringX)* (CRLF|EOF))?" json:"tag86,omitempty"`
 }
