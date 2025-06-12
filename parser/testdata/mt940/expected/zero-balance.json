@@ -1,0 +1,58 @@
+{
+ "tag20": "1111220206200003",
+ "tag25": {
+  "account": "508765431"
+ },
+ "tag28": {
+  "stmt_number": "227",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2011-11-19T00:00:00Z",
+  "currency": "SEK",
+  "amount": "17339213.33"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2011-11-21T00:00:00Z",
+    "entry_date": "0000-11-21T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "2496358.05",
+    "trx_ident": "NCMZ",
+    "owner_ref": "CMZ501234567",
+    "institution_ref": "6921 KOBA"
+   },
+   "tag86": [
+    "Zero Balancing 501234567"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2011-11-21T00:00:00Z",
+    "entry_date": "0000-11-21T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "655344.13",
+    "trx_ident": "NCMZ",
+    "owner_ref": "CMZ502345678",
+    "institution_ref": "6921 KOBA"
+   },
+   "tag86": [
+    "Zero Balancing 502345678"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2011-11-21T00:00:00Z",
+  "currency": "SEK",
+  "amount": "20490915.51"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2011-11-21T00:00:00Z",
+  "currency": "SEK",
+  "amount": "20490915.51"
+ }
+}

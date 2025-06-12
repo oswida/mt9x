@@ -25,8 +25,8 @@ func NewLexer() *lexer.StatefulDefinition {
 			{Name: "CharXSeq", Pattern: CharXSeq, Action: nil},
 		},
 		"SlashRestricted": []lexer.Rule{
-			{Name: "CharXSeqSlashRestrict", Pattern: CharXSeqSlashRestrict, Action: nil},
 			{Name: "CRLF", Pattern: CRLF, Action: nil},
+			{Name: "CharXSeqSlashRestrict", Pattern: CharXSeqSlashRestrict, Action: nil},
 			lexer.Return(),
 		},
 		"OnlyChars": []lexer.Rule{
@@ -41,26 +41,29 @@ func NewLexer() *lexer.StatefulDefinition {
 		},
 		"Balance_1": []lexer.Rule{
 			{Name: "DCMark", Pattern: DCMark, Action: nil},
-			{Name: "Date", Pattern: Numeric46, Action: nil},
-			{Name: "Currency", Pattern: Alpha3, Action: lexer.Push("Balance_2")},
+			{Name: "Date", Pattern: Numeric46, Action: lexer.Push("Balance_2")},
 			lexer.Return(),
 		},
 		"Balance_2": {
-			{Name: "Amount", Pattern: Amount, Action: lexer.Pop()},
+			{Name: "Currency", Pattern: Alpha3, Action: nil},
+			{Name: "Amount", Pattern: Amount, Action: nil},
 			lexer.Return(),
 		},
 		"Statement_1": []lexer.Rule{
 			{Name: "Date", Pattern: Numeric46, Action: nil}, // check with EntryDate
 			{Name: "RDCMark", Pattern: RDCMark, Action: lexer.Push("Statement_2")},
-			{Name: "BigLetter", Pattern: AlphaUpper, Action: lexer.Push("Statement_2")},
 			lexer.Return(),
 		},
 		"Statement_2": []lexer.Rule{
-			{Name: "Amount", Pattern: Amount, Action: nil},
-			{Name: "TransIdent", Pattern: TrxIdentCode, Action: lexer.Push("Statement_3")},
+			{Name: "BigLetter", Pattern: AlphaUpper, Action: nil},
+			{Name: "Amount", Pattern: Amount, Action: lexer.Push("Statement_3")},
 			lexer.Return(),
 		},
 		"Statement_3": []lexer.Rule{
+			{Name: "TransIdent", Pattern: TrxIdentCode, Action: lexer.Push("Statement_4")},
+			lexer.Return(),
+		},
+		"Statement_4": []lexer.Rule{
 			{Name: "CharXSeqSlashRestrict", Pattern: CharXSeqSlashRestrict, Action: nil},
 			{Name: "TwoSlashes", Pattern: "//", Action: nil},
 			{Name: "CRLF", Pattern: CRLF, Action: lexer.Push("OnlyChars")},

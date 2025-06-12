@@ -1,0 +1,54 @@
+{
+ "tag20": "0806120035300121",
+ "tag25": {
+  "account": "44123456"
+ },
+ "tag28": {
+  "stmt_number": "112",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "NOK",
+  "amount": "116.98"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "2500000",
+    "trx_ident": "NTRF",
+    "owner_ref": "22233300/6000",
+    "institution_ref": "A019910450123456",
+    "details": "NOLI"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "2500000",
+    "trx_ident": "NTRF",
+    "owner_ref": "TW100012",
+    "institution_ref": "PU00459450123456",
+    "details": "60000-IT-A06"
+   }
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "NOK",
+  "amount": "116.98"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "NOK",
+  "amount": "116.98"
+ }
+}

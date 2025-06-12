@@ -40,7 +40,7 @@ type MT940Message struct {
 	// (if a credit or debit balance) for the specified forward value date.
 	ForwardAvailableBalance []Balance `parser:"(T65 @@ (CRLF|EOF))*" json:"tag65,omitempty"`
 	// Summarizing owner info
-	AccountOwnerInfo []string `parser:"(T86 @CharXSeq (CRLF @CharXSeq)* (CRLF|EOF))?" json:"tag86,omitempty"`
+	AccountOwnerInfo []string `parser:"(T86 @CharXSeq ((CRLF @CharXSeq?)*|EOF))?" json:"tag86,omitempty"`
 }
 
 // Validate validates MT940 messages according "Network Validated Rules"
@@ -115,10 +115,11 @@ func (m MT940Message) ToCSV(serializeT65 bool) []string {
 		row = append(row, orEmptyString(m.AccountIdentification.IdentCode))
 		row = append(row, m.StatementNumber.StatementNo)
 		row = append(row, orEmptyString(m.StatementNumber.SequenceNo))
-		row = append(row, m.OpeningBalance.DCMark)
-		row = append(row, m.OpeningBalance.Date.Format(time.DateOnly))
-		row = append(row, m.OpeningBalance.Currency)
-		row = append(row, m.OpeningBalance.Amount.StringFixed(2))
+		row = append(row,
+			m.OpeningBalance.DCMark,
+			m.OpeningBalance.Date.Format(time.DateOnly),
+			m.OpeningBalance.Currency,
+			m.OpeningBalance.Amount.StringFixed(2))
 		row = append(row, stmt.Statement.ValueDate.Format(time.DateOnly))
 		edate := ""
 		if stmt.Statement.EntryDate != nil {
@@ -133,14 +134,20 @@ func (m MT940Message) ToCSV(serializeT65 bool) []string {
 		row = append(row, orEmptyString(stmt.Statement.InstitutionReference))
 		row = append(row, orEmptyString(stmt.Statement.Details))
 		row = append(row, strings.Join(stmt.AccountOwnerInfo, " "))
-		row = append(row, m.ClosingBalance.DCMark)
-		row = append(row, m.ClosingBalance.Date.Format(time.DateOnly))
-		row = append(row, m.ClosingBalance.Currency)
-		row = append(row, m.ClosingBalance.Amount.StringFixed(2))
-		row = append(row, m.ClosingAvailableBalance.DCMark)
-		row = append(row, m.ClosingAvailableBalance.Date.Format(time.DateOnly))
-		row = append(row, m.ClosingAvailableBalance.Currency)
-		row = append(row, m.ClosingAvailableBalance.Amount.StringFixed(2))
+		row = append(row,
+			m.ClosingBalance.DCMark,
+			m.ClosingBalance.Date.Format(time.DateOnly),
+			m.ClosingBalance.Currency,
+			m.ClosingBalance.Amount.StringFixed(2))
+		if m.ClosingAvailableBalance != nil {
+			row = append(row,
+				m.ClosingAvailableBalance.DCMark,
+				m.ClosingAvailableBalance.Date.Format(time.DateOnly),
+				m.ClosingAvailableBalance.Currency,
+				m.ClosingAvailableBalance.Amount.StringFixed(2))
+		} else {
+			row = append(row, "", "", "", "")
+		}
 		if serializeT65 {
 			dc := []string{}
 			dt := []string{}
@@ -152,10 +159,13 @@ func (m MT940Message) ToCSV(serializeT65 bool) []string {
 				cur = append(cur, fab.Currency)
 				amt = append(amt, fab.Amount.StringFixed(2))
 			}
-			row = append(row, strings.Join(dc, "/"))
-			row = append(row, strings.Join(dt, "/"))
-			row = append(row, strings.Join(cur, "/"))
-			row = append(row, strings.Join(amt, "/"))
+			row = append(row,
+				strings.Join(dc, "/"),
+				strings.Join(dt, "/"),
+				strings.Join(cur, "/"),
+				strings.Join(amt, "/"))
+		} else {
+			row = append(row, "", "", "", "")
 		}
 		row = append(row, strings.Join(m.AccountOwnerInfo, " "))
 		rows = append(rows, strings.Join(row, ","))

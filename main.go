@@ -5,12 +5,11 @@ import (
 	"fmt"
 	"mt9x/grammar"
 	"mt9x/parser"
-	"strings"
 )
 
 func main() {
 	p := parser.NewFileParser[grammar.MT940Message]()
-	result, err := p.Parse("parser/testdata/mt940/input/mbank.msg", nil)
+	result, err := p.Parse("parser/testdata/mt940/input/csob.sta", false, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -20,7 +19,4 @@ func main() {
 	}
 
 	fmt.Printf("%s\n", string(v))
-
-	rows := result.ToCSV(false)
-	fmt.Println(strings.Join(rows, "\n"))
 }

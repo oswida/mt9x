@@ -4,15 +4,18 @@ package parser
 
 const (
 	// Actually we are using Z character set instead of X, some banks are not strict to the char sets
-	CharX        = `[a-zA-Z0-9/\-\?:().,'+  ="%&\*<>;@#_]`
-	CharXNoSlash = `[a-zA-Z0-9\-\?:().,'+  ="%&\*<>;@#_]`
-	Numeric      = `[0-9]`               // n
-	AlphaUpper   = `[A-Z]`               // a
-	AlphaNum     = `[A-Z0-9]`            // c
-	HexNum       = `[ABCDEF0-9]`         // h
-	CharXSeq     = `^[^:]` + CharX + `+` // x sequence
+	// Added also `^` as for structural separator and `|` used in BNP.
+	CharX             = `[a-zA-Z0-9/\-?:().,'+  ="%&*<>;@#_^|]`
+	CharXNoSlash      = `[a-zA-Z0-9\-?:().,'+  ="%&*<>;@#_^|]`
+	CharXNoColon      = `[a-zA-Z0-9/\-?().,'+  ="%&*<>;@#_^|]`
+	CharXNoColonSlash = `[a-zA-Z0-9\-?().,'+  ="%&*<>;@#_^|]`
+	Numeric           = `[0-9]`                    // n
+	AlphaUpper        = `[A-Z]`                    // a
+	AlphaNum          = `[A-Z0-9]`                 // c
+	HexNum            = `[ABCDEF0-9]`              // h
+	CharXSeq          = CharXNoColon + CharX + `*` // x sequence
 	// This field must not start or end with a slash '/' and must not contain two consecutive slashes '//' (Error code(s): T26).
-	CharXSeqSlashRestrict = `^[^:]` + CharXNoSlash + `+(/` + CharXNoSlash + `+)*`
+	CharXSeqSlashRestrict = CharXNoColonSlash + CharXNoSlash + `*(/` + CharXNoSlash + `+)*`
 	NumSeq                = Numeric + `+`
 	DCMark                = `[DC]`
 	RDCMark               = `R?[DC]`
