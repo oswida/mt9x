@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"mt9x/grammar"
 	"mt9x/parser"
+	"strings"
 )
 
 func main() {
@@ -19,4 +20,7 @@ func main() {
 	}
 
 	fmt.Printf("%s\n", string(v))
+
+	rows := result.ToCSV(false)
+	fmt.Println(strings.Join(rows, "\n"))
 }

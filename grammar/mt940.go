@@ -4,6 +4,11 @@ import (
 	"fmt"
 	"mt9x/bundle"
 	"strings"
+	"time"
+)
+
+const (
+	CSVHeader = `TransactionRefNo,RelatedReference,Account,IdentCode,StmtNo,SeqNo,OB_DC,OB_Date,OB_Curr,OB_Amount,ValueDate,EntryDate,DC,FCode,Amount,TrxIdent,Reference,InstitutionRef,Details,AccOwnerInfo,CB_DC,CB_Date,CB_Curr,CB_Amount,CAB_DC,CAB_Date,CAB_Curr,CAB_Amount,FAB_DC,FAB_Date,FAB_Curr,FAB_Amount,MsgAccOwnerInfo`
 )
 
 // Grammar for MT940 file, according standard available here:
@@ -88,4 +93,72 @@ func isCorrectReference(ref string) bool {
 	return !strings.HasPrefix(ref, "/") &&
 		!strings.HasSuffix(ref, "/") &&
 		!strings.Contains(ref, "//")
+}
+
+func orEmptyString(data *string) string {
+	if data != nil {
+		return *data
+	}
+	return ""
+}
+
+// ToCSV serializes message to CSV row set.
+// Statements are base for row set, rest of envelope data is duplicated in every row.
+// Additional header row is added at the beginning.
+func (m MT940Message) ToCSV(serializeT65 bool) []string {
+	rows := []string{CSVHeader}
+	for _, stmt := range m.Statements {
+		row := []string{}
+		row = append(row, m.TransactionRefNo)
+		row = append(row, orEmptyString(m.RelatedReference))
+		row = append(row, m.AccountIdentification.Account)
+		row = append(row, orEmptyString(m.AccountIdentification.IdentCode))
+		row = append(row, m.StatementNumber.StatementNo)
+		row = append(row, orEmptyString(m.StatementNumber.SequenceNo))
+		row = append(row, m.OpeningBalance.DCMark)
+		row = append(row, m.OpeningBalance.Date.Format(time.DateOnly))
+		row = append(row, m.OpeningBalance.Currency)
+		row = append(row, m.OpeningBalance.Amount.StringFixed(2))
+		row = append(row, stmt.Statement.ValueDate.Format(time.DateOnly))
+		edate := ""
+		if stmt.Statement.EntryDate != nil {
+			edate = stmt.Statement.EntryDate.Format(time.DateOnly)
+		}
+		row = append(row, edate)
+		row = append(row, stmt.Statement.DCMark)
+		row = append(row, orEmptyString(stmt.Statement.FundsCode))
+		row = append(row, stmt.Statement.Amount.StringFixed(2))
+		row = append(row, stmt.Statement.TransactionIdent)
+		row = append(row, stmt.Statement.Reference)
+		row = append(row, orEmptyString(stmt.Statement.InstitutionReference))
+		row = append(row, orEmptyString(stmt.Statement.Details))
+		row = append(row, strings.Join(stmt.AccountOwnerInfo, " "))
+		row = append(row, m.ClosingBalance.DCMark)
+		row = append(row, m.ClosingBalance.Date.Format(time.DateOnly))
+		row = append(row, m.ClosingBalance.Currency)
+		row = append(row, m.ClosingBalance.Amount.StringFixed(2))
+		row = append(row, m.ClosingAvailableBalance.DCMark)
+		row = append(row, m.ClosingAvailableBalance.Date.Format(time.DateOnly))
+		row = append(row, m.ClosingAvailableBalance.Currency)
+		row = append(row, m.ClosingAvailableBalance.Amount.StringFixed(2))
+		if serializeT65 {
+			dc := []string{}
+			dt := []string{}
+			cur := []string{}
+			amt := []string{}
+			for _, fab := range m.ForwardAvailableBalance {
+				dc = append(dc, fab.DCMark)
+				dt = append(dt, fab.Date.Format(time.DateOnly))
+				cur = append(cur, fab.Currency)
+				amt = append(amt, fab.Amount.StringFixed(2))
+			}
+			row = append(row, strings.Join(dc, "/"))
+			row = append(row, strings.Join(dt, "/"))
+			row = append(row, strings.Join(cur, "/"))
+			row = append(row, strings.Join(amt, "/"))
+		}
+		row = append(row, strings.Join(m.AccountOwnerInfo, " "))
+		rows = append(rows, strings.Join(row, ","))
+	}
+	return rows
 }
