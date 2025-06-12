@@ -16,17 +16,17 @@ type StatementSection struct {
 	Statement Statement `parser:"T61 @@ (CRLF|EOF)" json:"tag61"`
 	// Contains additional information about the transaction detailed in the preceding statement line
 	// and which is to be passed on to the account owner.
-	AccountOwnerInfo []string `parser:"(T86 @StringX (CRLF @StringX)* (CRLF|EOF))?" json:"tag86,omitempty"`
+	AccountOwnerInfo []string `parser:"(T86 @CharXSeq (CRLF @CharXSeq)* (CRLF|EOF))?" json:"tag86,omitempty"`
 }
 
 type AccountIdent struct {
-	Account   string  `parser:"@StringX" json:"account"`
-	IdentCode *string `parser:"(CRLF @StringX)?" json:"ident_code,omitempty"` //TODO: validate ident code 4!a2!a2!c[3!c]
+	Account   string  `parser:"@CharXSeq" json:"account"`
+	IdentCode *string `parser:"(CRLF @CharXSeq)?" json:"ident_code,omitempty"` //TODO: validate ident code 4!a2!a2!c[3!c]
 }
 
 type StatementNumber struct {
-	StatementNo string  `parser:"@Number" json:"stmt_number"`
-	SequenceNo  *string `parser:"(Slash @Number)?" json:"seq_number,omitempty"`
+	StatementNo string  `parser:"@NumSeq" json:"stmt_number"`
+	SequenceNo  *string `parser:"(Slash @NumSeq)?" json:"seq_number,omitempty"`
 }
 
 type Balance struct {
@@ -37,15 +37,15 @@ type Balance struct {
 }
 
 type Statement struct {
-	ValueDate            parser.SixDigitDate  `parser:"@Date" json:"value_date"`
-	EntryDate            *parser.SixDigitDate `parser:"@EntryDate?" json:"entry_date,omitempty"`
-	DCMark               string               `parser:"@RDCMark" json:"dc_mark"`
-	FundsCode            *string              `parser:"@BigLetter?" json:"funds_code,omitempty"`
-	Amount               parser.CommaDecimal  `parser:"@Amount" json:"amount"`
-	TransactionIdent     string               `parser:"@TransIdent" json:"trx_ident"`
-	Reference            string               `parser:"@StringXNo2Slash" json:"owner_ref"`
-	InstitutionReference *string              `parser:"(TwoSlashes @StringXNo2Slash?)?" json:"institution_ref,omitempty"`
-	Details              *string              `parser:"(CRLF @StringX)?" json:"details,omitempty"`
+	ValueDate            parser.SixDigitDate   `parser:"@Date" json:"value_date"`
+	EntryDate            *parser.FourDigitDate `parser:"@Date?" json:"entry_date,omitempty"`
+	DCMark               string                `parser:"@RDCMark" json:"dc_mark"`
+	FundsCode            *string               `parser:"@BigLetter?" json:"funds_code,omitempty"`
+	Amount               parser.CommaDecimal   `parser:"@Amount" json:"amount"`
+	TransactionIdent     string                `parser:"@TransIdent" json:"trx_ident"`
+	Reference            string                `parser:"@CharXSeqSlashRestrict" json:"owner_ref"`
+	InstitutionReference *string               `parser:"(TwoSlashes @CharXSeqSlashRestrict?)?" json:"institution_ref,omitempty"`
+	Details              *string               `parser:"(CRLF @CharXSeq)?" json:"details,omitempty"`
 }
 
 // --- VALIDATIONS ---
