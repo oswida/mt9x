@@ -37,15 +37,15 @@ type Balance struct {
 }
 
 type Statement struct {
-	ValueDate            parser.SixDigitDate  `parser:"@Date" json:"value_date"`
-	EntryDate            *parser.SixDigitDate `parser:"@EntryDate?" json:"entry_date,omitempty"`
-	DCMark               string               `parser:"@RDCMark" json:"dc_mark"`
-	FundsCode            *string              `parser:"@BigLetter?" json:"funds_code,omitempty"`
-	Amount               parser.CommaDecimal  `parser:"@Amount" json:"amount"`
-	TransactionIdent     string               `parser:"@TransIdent" json:"trx_ident"`
-	Reference            string               `parser:"@StringXNo2Slash" json:"owner_ref"`
-	InstitutionReference *string              `parser:"(TwoSlashes @StringXNo2Slash?)?" json:"institution_ref,omitempty"`
-	Details              *string              `parser:"(CRLF @StringX)?" json:"details,omitempty"`
+	ValueDate            parser.SixDigitDate   `parser:"@Date" json:"value_date"`
+	EntryDate            *parser.FourDigitDate `parser:"@EntryDate?" json:"entry_date,omitempty"`
+	DCMark               string                `parser:"@RDCMark" json:"dc_mark"`
+	FundsCode            *string               `parser:"@BigLetter?" json:"funds_code,omitempty"`
+	Amount               parser.CommaDecimal   `parser:"@Amount" json:"amount"`
+	TransactionIdent     string                `parser:"@TransIdent" json:"trx_ident"`
+	Reference            string                `parser:"@StringXNo2Slash" json:"owner_ref"`
+	InstitutionReference *string               `parser:"(TwoSlashes @StringXNo2Slash?)?" json:"institution_ref,omitempty"`
+	Details              *string               `parser:"(CRLF @StringX)?" json:"details,omitempty"`
 }
 
 // --- VALIDATIONS ---

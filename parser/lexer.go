@@ -96,6 +96,7 @@ func NewLexer() *lexer.StatefulDefinition {
 		"Tag61_5": []lexer.Rule{
 			// Supplementary details
 			{Name: "StringX", Pattern: StringX, Action: nil}, // cannot be tag
+			{Name: "CRLF", Pattern: CRLF, Action: lexer.Pop()},
 			lexer.Return(),
 		},
 		"Tag86": []lexer.Rule{

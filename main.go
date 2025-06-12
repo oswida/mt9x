@@ -5,11 +5,12 @@ import (
 	"fmt"
 	"mt9x/grammar"
 	"mt9x/parser"
+	"os"
 )
 
 func main() {
 	p := parser.NewFileParser[grammar.MT940Message]()
-	result, err := p.Parse("testdata/mt940/input/spec-example.msg", nil)
+	result, err := p.Parse("parser/testdata/mt940/input/ok-mbank.msg", os.Stdout)
 	if err != nil {
 		panic(err)
 	}
