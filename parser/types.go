@@ -48,3 +48,21 @@ func (d *SixDigitDate) Capture(values []string) error {
 	d.Time = v
 	return nil
 }
+
+// FourDigitDate captures dates in MMDD format.
+type FourDigitDate struct {
+	time.Time
+}
+
+func (d *FourDigitDate) Capture(values []string) error {
+	if len(values) != 1 {
+		return fmt.Errorf("bad capture length for FourDigitDate: %v", values)
+	}
+	v, err := time.Parse("0102", values[0])
+	if err != nil {
+		return err
+	}
+
+	d.Time = v
+	return nil
+}

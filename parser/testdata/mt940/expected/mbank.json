@@ -1,0 +1,87 @@
+{
+ "tag20": "ST170119CYC/1",
+ "tag25": {
+  "account": "PL29114010810000267002001002"
+ },
+ "tag28": {
+  "stmt_number": "1",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2017-01-19T00:00:00Z",
+  "currency": "PLN",
+  "amount": "0.4"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2017-01-19T00:00:00Z",
+    "entry_date": "0000-01-19T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "0.01",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "MB170119012058",
+    "details": "911-TRANSAKCJA IPH"
+   },
+   "tag86": [
+    "911 TRANSAKCJA COLLECT; ID IPH: XX000000000001; Z RACH.: ",
+    "56114010810000267002001001; OD: JAN NOWAK  ",
+    "UL. NIJAKA 1 M 2 31-234 KRAKOW; TYT.: PRZELEW SRODKOW   ; ",
+    "TNR: 179171073864111.010001"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2017-01-19T00:00:00Z",
+    "entry_date": "0000-01-19T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "0.01",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "MB170119012085",
+    "details": "911-TRANSAKCJA IPH"
+   },
+   "tag86": [
+    "911 TRANSAKCJA COLLECT; ID IPH: XX000000000002; Z RACH.: ",
+    "56114010810000267002001001; OD: JAN NOWAK  ",
+    "UL. NIJAKA 1 M 2 31-234 KRAKOW; TYT.: PRZELEW SRODKOW   ; ",
+    "TNR: 179171073864192.000001"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2017-01-19T00:00:00Z",
+    "entry_date": "0000-01-19T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "0.01",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "MB170119012121",
+    "details": "911-TRANSAKCJA IPH"
+   },
+   "tag86": [
+    "911 TRANSAKCJA COLLECT; ID IPH: XX000000000003; Z RACH.: ",
+    "56114010810000267002001001; OD: JAN NOWAK  ",
+    "UL. NIJAKA 1 M 2 31-234 KRAKOW; TYT.: PRZELEW SRODKOW   ; ",
+    "TNR: 179171073864291.000001"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2017-01-19T00:00:00Z",
+  "currency": "PLN",
+  "amount": "0.43"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2017-01-19T00:00:00Z",
+  "currency": "PLN",
+  "amount": "0.43"
+ }
+}

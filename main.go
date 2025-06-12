@@ -9,7 +9,7 @@ import (
 
 func main() {
 	p := parser.NewFileParser[grammar.MT940Message]()
-	result, err := p.Parse("testdata/mt940/input/spec-example.msg", nil)
+	result, err := p.Parse("parser/testdata/mt940/input/mbank.msg", nil)
 	if err != nil {
 		panic(err)
 	}

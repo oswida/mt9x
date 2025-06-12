@@ -12,9 +12,9 @@ import (
 // Message represents MT940 standard message structure.
 type MT940Message struct {
 	// Specifies the reference assigned by the Sender to unambiguously identify the message.
-	TransactionRefNo string `parser:"T20 @StringX CRLF" json:"tag20"`
-	// Contains the field 20 Transaction Reference Number of the request message (response to MT920 Request Message).
-	RelatedReference *string `parser:"(T21 @StringX CRLF)?" json:"tag21,omitempty"`
+	TransactionRefNo string `parser:"T20 @CharXSeqSlashRestrict CRLF" json:"tag20"`
+	// If the MT 940 is sent in response to an MT 920 Request Message, this field must contain the field 20 Transaction Reference Number of the request message.
+	RelatedReference *string `parser:"(T21 @CharXSeqSlashRestrict CRLF)?" json:"tag21,omitempty"`
 	// Identifies the account and optionally the identifier code of the account owner for which the statement is sent.
 	// Need some examples, optional
 	AccountIdentification AccountIdent `parser:"(T25|T25P) @@ CRLF" json:"tag25"`
@@ -35,7 +35,7 @@ type MT940Message struct {
 	// (if a credit or debit balance) for the specified forward value date.
 	ForwardAvailableBalance []Balance `parser:"(T65 @@ (CRLF|EOF))*" json:"tag65,omitempty"`
 	// Summarizing owner info
-	AccountOwnerInfo []string `parser:"(T86 @StringX (CRLF @StringX)* (CRLF|EOF))?" json:"tag86,omitempty"`
+	AccountOwnerInfo []string `parser:"(T86 @CharXSeq (CRLF @CharXSeq)* (CRLF|EOF))?" json:"tag86,omitempty"`
 }
 
 // Validate validates MT940 messages according "Network Validated Rules"
