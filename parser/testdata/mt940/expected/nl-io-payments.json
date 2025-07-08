@@ -1,0 +1,188 @@
+{
+ "tag20": "5566778899021524",
+ "tag25": {
+  "account": "0712345568"
+ },
+ "tag28": {
+  "stmt_number": "32",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2007-02-14T00:00:00Z",
+  "currency": "EUR",
+  "amount": "356527.02"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "46759.83",
+    "trx_ident": "FMSC",
+    "owner_ref": "003775",
+    "institution_ref": "G003775",
+    "details": "ICD/04999/00018"
+   },
+   "tag86": [
+    "TESTCOMPANY ABC",
+    "POSTBUS 54",
+    "3003 JC  ROTTERDAM",
+    "113043  113044  113070  113069  113088  11309",
+    "107047 113089"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "5452.5",
+    "trx_ident": "FMSC",
+    "owner_ref": "003785",
+    "institution_ref": "G003785",
+    "details": "DTA/04999/00009"
+   },
+   "tag86": [
+    "Testing (Europe) BV",
+    "Postbus 2500",
+    "3100 BA  Poortugaal",
+    "WK07NL",
+    "           112960"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "1515",
+    "trx_ident": "FMSC",
+    "owner_ref": "001214",
+    "institution_ref": "G001214",
+    "details": "T155408845000020"
+   },
+   "tag86": [
+    "TEST GMBH",
+    "TESTING-STR.8",
+    "56007 TEST CITY",
+    "RG.113146 V.02.02.07"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "1223.66",
+    "trx_ident": "FMSC",
+    "owner_ref": "001066",
+    "institution_ref": "G001066",
+    "details": "T155407038000990"
+   },
+   "tag86": [
+    "TESTAR COMPANY AB",
+    "BOX 9",
+    "900 20 PITEA",
+    "11906,11905"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "314.18",
+    "trx_ident": "FMSC",
+    "owner_ref": "006006",
+    "institution_ref": "G006006",
+    "details": "T155407038000080"
+   },
+   "tag86": [
+    "TESTING BOARD EUROPE,",
+    "TESTINGLASSUNG DER TEST",
+    "TESTSTRASSE 14-16",
+    "1090 WIEN",
+    "OUR ACC",
+    "DOC NO 559900559"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "4145",
+    "trx_ident": "NCRO",
+    "owner_ref": "PU30007023330103",
+    "institution_ref": "G001001",
+    "details": "BUTI110000012242"
+   },
+   "tag86": [
+    "/REMI/2958 2969/BENM/TESTBOLAGET AB?SE4630000000030766605555",
+    "/CHGS/SHA/OCMT/EUR4145,/BENB/NDEASESS"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "3102.8",
+    "trx_ident": "NLOC",
+    "owner_ref": "PU30007023330115",
+    "institution_ref": "G009004",
+    "details": "IZ/MCI-G/0161560001"
+   },
+   "tag86": [
+    "/REMI/700949 700951?700950/BENM/TESTCOMPANY NL",
+    "?503228881"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "408.68",
+    "trx_ident": "NLOC",
+    "owner_ref": "PU30007023330105",
+    "institution_ref": "G009006",
+    "details": "IZ/MCI-G/0164455001"
+   },
+   "tag86": [
+    "/REMI/R2007-304438/BENM/NEDERLANDS TESTING BV?426056288"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-02-14T00:00:00Z",
+    "entry_date": "0000-02-14T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "528",
+    "trx_ident": "FMSC",
+    "owner_ref": "016002",
+    "institution_ref": "G011002",
+    "details": "0001835236660008"
+   },
+   "tag86": [
+    "TESTINGDIENST",
+    "APELDOORN",
+    "0001835236660008"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2007-02-14T00:00:00Z",
+  "currency": "EUR",
+  "amount": "403607.71"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2007-02-14T00:00:00Z",
+  "currency": "EUR",
+  "amount": "403607.71"
+ }
+}

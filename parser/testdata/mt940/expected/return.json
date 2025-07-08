@@ -1,0 +1,45 @@
+{
+ "tag20": "151006120035300006",
+ "tag25": {
+  "account": "987654321"
+ },
+ "tag28": {
+  "stmt_number": "112",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2015-10-06T00:00:00Z",
+  "currency": "SEK",
+  "amount": "89324.89"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2015-10-06T00:00:00Z",
+    "entry_date": "0000-10-06T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "300",
+    "trx_ident": "NSWR",
+    "owner_ref": "ORIGINALAVSANDAR",
+    "institution_ref": "BGC1234567890002"
+   },
+   "tag86": [
+    "/REMI/Meddelande som kan vara max 50 tecken/ORDP/1234567899",
+    "/BENM/+46709876543 ORIGINALAVSANDARENS NAMN "
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2015-10-06T00:00:00Z",
+  "currency": "SEK",
+  "amount": "89024.89"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2015-10-06T00:00:00Z",
+  "currency": "SEK",
+  "amount": "89024.89"
+ }
+}

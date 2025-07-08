@@ -16,7 +16,7 @@ type StatementSection struct {
 	Statement Statement `parser:"T61 @@ (CRLF|EOF)" json:"tag61"`
 	// Contains additional information about the transaction detailed in the preceding statement line
 	// and which is to be passed on to the account owner.
-	AccountOwnerInfo []string `parser:"(T86 @CharXSeq (CRLF @CharXSeq)* (CRLF|EOF))?" json:"tag86,omitempty"`
+	AccountOwnerInfo []string `parser:"(T86 @CharXSeq ((CRLF @CharXSeq?)*|EOF))?" json:"tag86,omitempty"`
 }
 
 type AccountIdent struct {

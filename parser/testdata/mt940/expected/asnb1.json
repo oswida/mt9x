@@ -1,0 +1,39 @@
+{
+ "tag20": "0000000000",
+ "tag25": {
+  "account": "NL81ASNB9999999999"
+ },
+ "tag28": {
+  "stmt_number": "1",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2020-01-01T00:00:00Z",
+  "currency": "EUR",
+  "amount": "444.29"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2020-01-01T00:00:00Z",
+    "entry_date": "0000-01-01T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "65",
+    "trx_ident": "NODC",
+    "owner_ref": "NL47INGB9999999999",
+    "details": "hr gjlm paulissen"
+   },
+   "tag86": [
+    "NL47INGB9999999999 hr gjlm paulissen",
+    "Betaling sieraden"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2020-01-01T00:00:00Z",
+  "currency": "EUR",
+  "amount": "379.29"
+ }
+}

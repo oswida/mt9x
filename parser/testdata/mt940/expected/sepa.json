@@ -1,0 +1,81 @@
+{
+ "tag20": "T089414106000001",
+ "tag25": {
+  "account": "50880050/0194791601888"
+ },
+ "tag28": {
+  "stmt_number": "00004",
+  "seq_number": "00001"
+ },
+ "tag60": {
+  "dc_mark": "D",
+  "date": "2007-09-03T00:00:00Z",
+  "currency": "EUR",
+  "amount": "324910.25"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2007-09-04T00:00:00Z",
+    "entry_date": "0000-09-04T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "R",
+    "amount": "1910.05",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "0724710333345079"
+   },
+   "tag86": [
+    "166?00GUTSCHRIFT?100399?20EREF+TFNR 21001 EndToEndId ?2100001?22S",
+    "VWZ+Verwend CTSc-01 FFP TF?23Nr 21 001?30DRESDEFF508?31DE03508800",
+    "500194791600?32QUENTIN?33        QUAST?70Empfaenger Quentin Quast",
+    " UK?71 01"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-09-04T00:00:00Z",
+    "entry_date": "0000-09-04T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "R",
+    "amount": "50990.05",
+    "trx_ident": "NTRF",
+    "owner_ref": "NONREF",
+    "institution_ref": "0724710352956584"
+   },
+   "tag86": [
+    "166?00GUTSCHRIFT?100399?20EREF+TFNR 21004 EndToEndId ?2100001?22S",
+    "VWZ+Verwend CTSc-01 eBB TF?23Nr 21004?30DRESDEFF508?31DE035088005",
+    "00194791600?32Quentin Quast?70Empfaenger Quentin Quast UK?71 01"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2007-09-04T00:00:00Z",
+    "entry_date": "0000-09-04T00:00:00Z",
+    "dc_mark": "D",
+    "funds_code": "R",
+    "amount": "125300.1",
+    "trx_ident": "NTRF",
+    "owner_ref": "KREF+",
+    "institution_ref": "F2CA963F5C750549"
+   },
+   "tag86": [
+    "191?00SEPA-UEBERW?100399?20KREF+TFNr 03005 MSGID CTSc-?2101 FFP?2",
+    "2MTLG:SEPA-Ueberweisungsauft?23rag Datei mit 0000001 Zahlu?24ngen"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "D",
+  "date": "2007-09-04T00:00:00Z",
+  "currency": "EUR",
+  "amount": "397310.25"
+ },
+ "tag64": {
+  "dc_mark": "D",
+  "date": "2007-09-04T00:00:00Z",
+  "currency": "EUR",
+  "amount": "397310.25"
+ }
+}

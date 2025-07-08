@@ -1,0 +1,78 @@
+{
+ "tag20": "31MAR17DAILY",
+ "tag25": {
+  "account": "0000000123456"
+ },
+ "tag28": {
+  "stmt_number": "00065",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2017-03-30T00:00:00Z",
+  "currency": "CZK",
+  "amount": "100"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2017-03-31T00:00:00Z",
+    "entry_date": "0000-03-31T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "1.2",
+    "trx_ident": "NMSC",
+    "owner_ref": "12345678909876",
+    "institution_ref": "3150636703",
+    "details": "/OCMT/CZK1,20"
+   },
+   "tag86": [
+    "030?00Kurs:1,000000?20NAZEV PROTISTRANY?21ZAHRANICNI PLATBA",
+    "?22testovaci prevod ZPS?23.",
+    "?24.?25.",
+    "?26.?27POPL.ZAHR:CZK0,00?30CEKOCZPP",
+    "?31CZ6303000000000000654321?32NAZEV PROTISTRANY",
+    "?33ADRESA PROTISTRANY"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2017-03-31T00:00:00Z",
+    "entry_date": "0000-03-31T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "1.1",
+    "trx_ident": "FMSC",
+    "owner_ref": " ",
+    "institution_ref": "1720170331000001"
+   },
+   "tag86": [
+    "111?00NAZEV PROTISTRANY?20000000-0000654321/0300",
+    "?21VS:7987613246?22SS:8976343437?23KS:0123",
+    "?24testovaci prevod TPS?25.",
+    "?26.?27.",
+    "?28VS:7987613246?29SS:8976343437"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2017-03-31T00:00:00Z",
+    "entry_date": "0000-03-31T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "2.3",
+    "trx_ident": "NMSC",
+    "owner_ref": " ",
+    "institution_ref": "501509291000"
+   },
+   "tag86": [
+    "040?00Vklad hotovost ATM 1111?20VS:0000123456?21Vklad hotovost ATM 1111",
+    "?22CSOB Radlicka?23test vklad ATM",
+    "?24.?25SS:0012345678?26KS:"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2017-03-31T00:00:00Z",
+  "currency": "CZK",
+  "amount": "100"
+ }
+}

@@ -1,0 +1,190 @@
+{
+ "tag20": "CSCT032000000007",
+ "tag25": {
+  "account": "032000000007"
+ },
+ "tag28": {
+  "stmt_number": "00029",
+  "seq_number": "001"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2019-02-05T00:00:00Z",
+  "currency": "AUD",
+  "amount": "0"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "5000",
+    "trx_ident": "F803",
+    "owner_ref": "Payer Name This ",
+    "institution_ref": "0802198032003412",
+    "details": "is the beneficiary descrip"
+   },
+   "tag86": [
+    "WITHDRAWAL    2003412",
+    "Payer Name This is the beneficiary descrip"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "8000",
+    "trx_ident": "F817",
+    "owner_ref": "Payee Name This ",
+    "institution_ref": "0802198171413245",
+    "details": "is the beneficiary descrip"
+   },
+   "tag86": [
+    "WITHDRAWAL-OSKO PAYMENT 1413245",
+    "Payee Name This is the beneficiary descrip"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "780",
+    "trx_ident": "F870",
+    "owner_ref": "2413480 07 Feb 2",
+    "institution_ref": "0802198701413245",
+    "details": "019 MD06 Requested by paye"
+   },
+   "tag86": [
+    "WITHDRAWAL-PAYMENT RETURN",
+    "2413480 07 Feb 2019 MD06 Requested by paye"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "4000",
+    "trx_ident": "F874",
+    "owner_ref": "2413481 07 Feb 2",
+    "institution_ref": "0802198741413245",
+    "details": "019 MD06 Requested by paye"
+   },
+   "tag86": [
+    "WITHDRAWAL-OSKO PAYMENT RETURN",
+    "2413481 07 Feb 2019 MD06 Requested by paye"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "6000",
+    "trx_ident": "F886",
+    "owner_ref": "Payee Name This ",
+    "institution_ref": "0802198862056575",
+    "details": "is the beneficiary descrip"
+   },
+   "tag86": [
+    "DEPOSIT 2056575",
+    "Payee Name This is the beneficiary descrip"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "5000",
+    "trx_ident": "F887",
+    "owner_ref": "Payer Name This ",
+    "institution_ref": "0802198872003412",
+    "details": "is the beneficiary descrip"
+   },
+   "tag86": [
+    "DEPOSIT-OSKO PAYMENT    2003412",
+    "Payer Name This is the beneficiary descrip"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "5000",
+    "trx_ident": "F891",
+    "owner_ref": "1286995 05 Feb 2",
+    "institution_ref": "0802198911413245",
+    "details": "019 BE05 Payee is not fami"
+   },
+   "tag86": [
+    "DEPOSIT-PAYMENT    RETURN",
+    "1286995 05 Feb 2019 BE05 Payee is not fami"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "8000",
+    "trx_ident": "F892",
+    "owner_ref": "1286995 05 Feb 2",
+    "institution_ref": "0802198921413245",
+    "details": "019 BE05 Payee is not fami"
+   },
+   "tag86": [
+    "DEPOSIT-OSKO PAYMENT    RETURN",
+    "1286995 05 Feb 2019 BE05 Payee is not fami"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "5000",
+    "trx_ident": "F895",
+    "owner_ref": "2003412 07 Feb 2",
+    "institution_ref": "0802198951413245",
+    "details": "019 AC07 Account closed En"
+   },
+   "tag86": [
+    "DEPOSIT-PAYMENT    REVERSAL",
+    "2003412 07 Feb 2019 AC07 Account closed En"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2019-02-08T00:00:00Z",
+    "entry_date": "0000-02-08T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "8000",
+    "trx_ident": "F896",
+    "owner_ref": "5642137 07 Feb 2",
+    "institution_ref": "0802198961413245",
+    "details": "019 AC07 Account closed En"
+   },
+   "tag86": [
+    "DEPOSIT-OSKO PAYMENT    REVERSAL",
+    "5642137 07 Feb 2019 AC07 Account closed En"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2019-02-05T00:00:00Z",
+  "currency": "AUD",
+  "amount": "12000"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2019-02-05T00:00:00Z",
+  "currency": "AUD",
+  "amount": "12000"
+ }
+}

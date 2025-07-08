@@ -24,7 +24,7 @@ func NewFileParser[T MT9xMessage]() *FileParser[T] {
 }
 
 // Parse parses MT940 message into structure.
-func (fp *FileParser[T]) Parse(filename string, traceWriter io.Writer) (*T, error) {
+func (fp *FileParser[T]) Parse(filename string, validate bool, traceWriter io.Writer) (*T, error) {
 	f, err := os.Open(filename)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file %s: %w", filename, err)
@@ -37,9 +37,10 @@ func (fp *FileParser[T]) Parse(filename string, traceWriter io.Writer) (*T, erro
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse file %s: %w", filename, err)
 	}
-	err = (*res).Validate()
-	if err != nil {
-		return nil, fmt.Errorf("failed to validate parsed result %s: %w", filename, err)
+	if validate {
+		if err = (*res).Validate(); err != nil {
+			return nil, fmt.Errorf("failed to validate parsed result %s: %w", filename, err)
+		}
 	}
 
 	return res, nil

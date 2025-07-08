@@ -1,0 +1,133 @@
+{
+ "tag20": "1",
+ "tag25": {
+  "account": "/PL68160011270003012206715001"
+ },
+ "tag28": {
+  "stmt_number": "160",
+  "seq_number": "2009"
+ },
+ "tag60": {
+  "dc_mark": "D",
+  "date": "2009-09-03T00:00:00Z",
+  "currency": "PLN",
+  "amount": "2623569.48"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2009-09-03T00:00:00Z",
+    "entry_date": "0000-09-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "4988.01",
+    "trx_ident": "N723",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "723^00PRZELEW OTRZ ELIXIR ^34000",
+    "^3010600076 ^20faktura 1360/07/2009/RL 404/^2107/2009/ D",
+    "^32TRANSPORT REGIONALNY^33T SZYMON JORA UL. BAGIENNA",
+    "^3882106000760000326000742451",
+    "^62A 18 55-106 KATOWICE"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2009-08-03T00:00:00Z",
+    "entry_date": "0000-08-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "1130.83",
+    "trx_ident": "N721",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "721^00PRZELEW OTRZYMANY ^34000",
+    "^3016001169 ^201319/07/2009/RTL",
+    "^32Forters Spolka z o.o. ul. G^33runwaldzka 48 Katowice",
+    "BNP Paribas Bank Polska SA | Description of MT940 statement file | july 2021",
+    "3",
+    "^3838160011690003013153742001"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2009-08-03T00:00:00Z",
+    "entry_date": "0000-08-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "10866.8",
+    "trx_ident": "N632",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "632^00POLEC ZAPLATY UZNANI ^34000",
+    "^30 ^31",
+    "^20/NIP/5213110552/IDP/037635/^21TXT/ BALICKA 1393/07/200",
+    "^229/RTL",
+    "^32PREST - ANNA BALICKA 60"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2009-09-04T00:00:00Z",
+    "entry_date": "0000-09-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "152500",
+    "trx_ident": "N723",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "723^00PRZELEW OTRZ ELIXIR ^34000",
+    "^3095841021 ^20Zaplata za f-r Proforma nr^21 332/09/ 2009 z dn.31.07.20",
+    "^2209r. albumy historyczne",
+    "^32TRANSPORT REGIONALNY^33ALFRED ZIELONY GDANSK 2",
+    "^3849958410212003030054250001",
+    "^62A 55-095 GDANSK"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2009-08-04T00:00:00Z",
+    "entry_date": "0000-08-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "32500",
+    "trx_ident": "N723",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "723^00PRZELEW OTRZ ELIXIR ^34000",
+    "^3011401065 ^20AtQSZ -P^21bASCeNa CA20/11779/09",
+    "^32POTOCKIE TOWARZYSTWO UBEZPI^33ECZEN. ANDO BESTIA S.A. UL.",
+    "^3819114010650000227556432117",
+    "^62HESTII 1 81-731 SOPOT"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2009-08-03T00:00:00Z",
+    "entry_date": "0000-08-03T00:00:00Z",
+    "dc_mark": "C",
+    "funds_code": "N",
+    "amount": "668198.05",
+    "trx_ident": "N761",
+    "owner_ref": "NONREF"
+   },
+   "tag86": [
+    "761^00ZLECENIE SALDO ^34000",
+    "^30 ^31",
+    "^20zlecenie saldo 3011/3012 AI^21P",
+    "^32"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "D",
+  "date": "2009-08-03T00:00:00Z",
+  "currency": "PLN",
+  "amount": "1753385.79"
+ }
+}

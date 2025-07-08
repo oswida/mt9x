@@ -1,0 +1,272 @@
+{
+ "tag20": "0806120035300006",
+ "tag25": {
+  "account": "987654321"
+ },
+ "tag28": {
+  "stmt_number": "112",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "SEK",
+  "amount": "89324.89"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "1606",
+    "trx_ident": "NTRF",
+    "owner_ref": "111222333",
+    "institution_ref": "6091 000001"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "57392.84",
+    "trx_ident": "NMSC",
+    "owner_ref": "444555666",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "74697",
+    "trx_ident": "NTRF",
+    "owner_ref": "111222333",
+    "institution_ref": "6091 GI"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "4016.65",
+    "trx_ident": "NTRF",
+    "owner_ref": "777888999",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "4016.65",
+    "trx_ident": "NTRF",
+    "owner_ref": "444555666",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "874095",
+    "trx_ident": "NTRF",
+    "owner_ref": "111222333",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "874095",
+    "trx_ident": "NTRF",
+    "owner_ref": "888999777",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "426709",
+    "trx_ident": "NTRF",
+    "owner_ref": "111222333",
+    "institution_ref": "6091 BGINB"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-10T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "14412",
+    "trx_ident": "NMSC",
+    "owner_ref": "777888999",
+    "institution_ref": "6000 FIL-E"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-10T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "7500.05",
+    "trx_ident": "NMSC",
+    "owner_ref": "444555666",
+    "institution_ref": "6000 FIL-E"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-10T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "1058317.5",
+    "trx_ident": "NMSC",
+    "owner_ref": "111222333",
+    "institution_ref": "6000 FIL-E"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-10T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "214464",
+    "trx_ident": "NMSC",
+    "owner_ref": "888999777",
+    "institution_ref": "6000 FIL-E"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-10T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "2114",
+    "trx_ident": "NMSC",
+    "owner_ref": "555666777",
+    "institution_ref": "6000 FIL-E"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "3099048",
+    "trx_ident": "NTRF",
+    "owner_ref": "555666777",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "3099048",
+    "trx_ident": "NTRF",
+    "owner_ref": "555666777",
+    "institution_ref": "6000 IT-A06"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "125",
+    "trx_ident": "NCHG",
+    "owner_ref": "111222333",
+    "institution_ref": "0000 AVGIFT"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "72941",
+    "trx_ident": "NTRF",
+    "owner_ref": "444555666",
+    "institution_ref": "60001ABOL"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-11T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "53422",
+    "trx_ident": "NTRF",
+    "owner_ref": "444555666",
+    "institution_ref": "60001ABOL"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "74764",
+    "trx_ident": "NTRF",
+    "owner_ref": "444555666",
+    "institution_ref": "60001ABOL"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "183165",
+    "trx_ident": "NTRF",
+    "owner_ref": "444555666",
+    "institution_ref": "60001ABOL"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "17066",
+    "trx_ident": "NTRF",
+    "owner_ref": "777888999",
+    "institution_ref": "60001ABOL"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2008-06-12T00:00:00Z",
+    "entry_date": "0000-06-11T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "49735.7",
+    "trx_ident": "NTRF",
+    "owner_ref": "777888999",
+    "institution_ref": "60001ABOL"
+   }
+  }
+ ],
+ "tag62": {
+  "dc_mark": "D",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "SEK",
+  "amount": "196109.12"
+ },
+ "tag64": {
+  "dc_mark": "D",
+  "date": "2008-06-11T00:00:00Z",
+  "currency": "SEK",
+  "amount": "1154185.66"
+ }
+}

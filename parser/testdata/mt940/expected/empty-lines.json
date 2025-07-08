@@ -1,0 +1,72 @@
+{
+ "tag20": "654321",
+ "tag25": {
+  "account": "1234567891"
+ },
+ "tag28": {
+  "stmt_number": "851",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2017-09-28T00:00:00Z",
+  "currency": "USD",
+  "amount": "28000"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2017-09-29T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "546232.05",
+    "trx_ident": "S101",
+    "owner_ref": "PLTOL101-56",
+    "institution_ref": "C11126A1378"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2017-09-29T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "500000",
+    "trx_ident": "S103",
+    "owner_ref": "987009",
+    "institution_ref": "8951234"
+   },
+   "tag86": [
+    "/ORDP/COMPUTERSYS INC.",
+    "/REMI//INV/78541"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2017-09-29T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "100000",
+    "trx_ident": "NFEX",
+    "owner_ref": "AAAAUS0369PLATUS",
+    "institution_ref": "8954321"
+   }
+  },
+  {
+   "tag61": {
+    "value_date": "2017-09-29T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "200000",
+    "trx_ident": "NDIV",
+    "owner_ref": "NONREF",
+    "institution_ref": "8846543"
+   },
+   "tag86": [
+    "DIVIDEND LORAL CORP",
+    "PREFERRED STOCK 3TH QUARTER 2017"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2017-09-29T00:00:00Z",
+  "currency": "USD",
+  "amount": "81767.95"
+ }
+}

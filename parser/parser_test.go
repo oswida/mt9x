@@ -22,11 +22,11 @@ func TestProperMT940Files(t *testing.T) {
 		if f.IsDir() {
 			continue
 		}
-		result, err := parser.Parse(filepath.Join(basePath, "input", f.Name()), nil)
+		result, err := parser.Parse(filepath.Join(basePath, "input", f.Name()), false, nil)
 		assert.NoError(t, err)
 		value, err := json.MarshalIndent(result, "", " ")
 		assert.NoError(t, err)
-		golden.AssertBytes(t, value, filepath.Join("mt940", "expected", strings.ReplaceAll(f.Name(), ".msg", ".json")))
+		golden.Assert(t, string(value), filepath.Join("mt940", "expected", strings.ReplaceAll(f.Name(), ".sta", ".json")))
 	}
 
 }

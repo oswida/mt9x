@@ -1,0 +1,118 @@
+{
+ "tag20": "3322114455042465",
+ "tag25": {
+  "account": "12345678"
+ },
+ "tag28": {
+  "stmt_number": "79",
+  "seq_number": "1"
+ },
+ "tag60": {
+  "dc_mark": "C",
+  "date": "2015-04-23T00:00:00Z",
+  "currency": "GBP",
+  "amount": "42237.2"
+ },
+ "statements": [
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "3186.65",
+    "trx_ident": "FTRF",
+    "owner_ref": "RP46799613980388",
+    "details": "B/O COMPANY UK LTD"
+   },
+   "tag86": [
+    "/REMI/1177000222/ORDP/COMPANY UK LTD/ORDB/SC208801/CHGS/SHA"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "39351.8",
+    "trx_ident": "FTRF",
+    "owner_ref": "KJ81113KJ9938933",
+    "details": "B/O TREASURY FINANCE"
+   },
+   "tag86": [
+    "/REMI/PAYGB55XXXX40345678912300/ORDP/TREASURY FINANCE?CH",
+    "/ORDB/UBSWCHZH/CHGS/OUR"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "2434.4",
+    "trx_ident": "FTRF",
+    "owner_ref": "B/O TESTING LTD"
+   },
+   "tag86": [
+    "/REMI/REF NO.0133710/ORDP/TESTING LTD/ORDB/LLOYDS BANK PLC"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "C",
+    "amount": "2510.83",
+    "trx_ident": "FTRF",
+    "owner_ref": "NONREF",
+    "details": "B/O SENDER OF PAYMENT "
+   },
+   "tag86": [
+    "/REMI/123456/ORDP/SENDER OF PAYMENT /ORDB/JPMORGAN CHA",
+    "SE BK"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "434.39",
+    "trx_ident": "NLOC",
+    "owner_ref": "OWN REFERENCE 1",
+    "institution_ref": "5042110400882003",
+    "details": "NOLI BENEFICIARY X"
+   },
+   "tag86": [
+    "/REMI/INVOICE 22/BENM/BENEFICIARY X?51244555/ORDP/SENDER",
+    "OF PAYMENT LTD"
+   ]
+  },
+  {
+   "tag61": {
+    "value_date": "2015-04-23T00:00:00Z",
+    "entry_date": "0000-04-23T00:00:00Z",
+    "dc_mark": "D",
+    "amount": "1172.28",
+    "trx_ident": "NLOC",
+    "owner_ref": "OWN REFERENCE 2",
+    "institution_ref": "5042110400892003"
+   },
+   "tag86": [
+    "/REMI/INVOICE 33/BENM/BENEFICIARY Y?16345678/ORDP/SENDER",
+    "OF PAYMENT LTD"
+   ]
+  }
+ ],
+ "tag62": {
+  "dc_mark": "C",
+  "date": "2015-04-23T00:00:00Z",
+  "currency": "GBP",
+  "amount": "88114.21"
+ },
+ "tag64": {
+  "dc_mark": "C",
+  "date": "2015-04-23T00:00:00Z",
+  "currency": "GBP",
+  "amount": "88114.21"
+ }
+}
