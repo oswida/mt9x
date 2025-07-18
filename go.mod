@@ -1,4 +1,4 @@
-module mt9x
+module github.com/oswida/mt9x
 
 go 1.24.0
 

@@ -2,9 +2,10 @@ package grammar
 
 import (
 	"fmt"
-	"mt9x/bundle"
 	"strings"
 	"time"
+
+	"github.com/oswida/mt9x/bundle"
 )
 
 const (

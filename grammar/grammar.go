@@ -2,13 +2,14 @@ package grammar
 
 import (
 	"fmt"
-	"mt9x/bundle"
-	"mt9x/parser"
+
 	"slices"
 	"strconv"
 	"strings"
 	"unicode/utf8"
-	// "github.com/alecthomas/participle/v2/lexer"
+
+	"github.com/oswida/mt9x/bundle"
+	"github.com/oswida/mt9x/parser"
 )
 
 type StatementSection struct {

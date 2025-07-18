@@ -2,14 +2,14 @@ package parser_test
 
 import (
 	"encoding/json"
-	"mt9x/grammar"
-	"mt9x/parser"
 	"os"
 	"path/filepath"
 	"strings"
 	"testing"
 
 	"github.com/alecthomas/assert/v2"
+	"github.com/oswida/mt9x/grammar"
+	"github.com/oswida/mt9x/parser"
 	"gotest.tools/v3/golden"
 )
 

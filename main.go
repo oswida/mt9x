@@ -3,8 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"mt9x/grammar"
-	"mt9x/parser"
+
+	"github.com/oswida/mt9x/grammar"
+	"github.com/oswida/mt9x/parser"
 )
 
 func main() {
